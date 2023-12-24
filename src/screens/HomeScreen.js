@@ -13,7 +13,8 @@ import {
 import React, { useEffect, useState } from "react";
 import Features from "../components/features";
 import { dummyMessages } from "../constants";
-import Voice from "@react-native-community/voice";
+import Voice from "@react-native-voice/voice";
+import * as Speech from 'expo-speech';
 
 const ios = Platform.OS == "ios";
 
@@ -69,6 +70,7 @@ export default function HomeScreen() {
     Voice.onSpeechEnd = speechEndHandler;
     Voice.onSpeechResults = speechResultsHandler;
     Voice.onSpeechError = speechErrorHandler;
+
 
     return () => {
       // destroy the voice instance
